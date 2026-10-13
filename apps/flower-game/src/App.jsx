@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import Flower from './components/Flower'
-import { createPetals ,getWord} from './utils/petals'
+import { createPetals ,getWord,gethanabiranomaisuu} from './utils/petals'
 import retryImg from './assets/ui/retry.png'
 import './App.css'
 
 function App() {
   const [screen, setScreen] = useState('game')
-  const [petals, setPetals] = useState(createPetals(8))
+  const [petals, setPetals] = useState(createPetals(gethanabiranomaisuu()))
   const removedCount = petals.filter(p => p.status !== 'attached').length
   const lastWord = getWord(removedCount)
 
@@ -23,7 +23,7 @@ function App() {
     setPetals(updatedPetals); 
   }
 
-  const handleRetry = () => {setPetals(createPetals(8))}
+  const handleRetry = () => {setPetals(createPetals(gethanabiranomaisuu()))}
 
   const allGone = petals.every((petal) => petal.status  === 'gone' )
 

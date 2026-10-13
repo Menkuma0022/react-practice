@@ -1,3 +1,6 @@
+const MIN_PETALS = 5
+const MAX_PETALS = 12
+
 export function createPetals(n) {
   const petals = []
   for (let i = 0; i < n; i++) {
@@ -21,4 +24,8 @@ export function getWord(count){
   }
 
   return lastWord
+}
+
+export function gethanabiranomaisuu (){
+  return Math.floor(Math.random() * (MAX_PETALS - MIN_PETALS + 1 )) + MIN_PETALS
 }
