@@ -5,7 +5,7 @@ import retryImg from './assets/ui/retry.png'
 import './App.css'
 
 function App() {
-  const [screen, setScreen] = useState('game')
+  const [screen, setScreen] = useState('title')
   const [petals, setPetals] = useState(createPetals(gethanabiranomaisuu()))
   const removedCount = petals.filter(p => p.status !== 'attached').length
   const lastWord = getWord(removedCount)
@@ -23,9 +23,19 @@ function App() {
     setPetals(updatedPetals); 
   }
 
+  const handleStart = () => {setScreen('game')}
   const handleRetry = () => {setPetals(createPetals(gethanabiranomaisuu()))}
 
   const allGone = petals.every((petal) => petal.status  === 'gone' )
+
+if(screen ==='title'){
+   return (
+      <div className="app">
+        <h1>花占いでございます</h1>
+        <button onClick={handleStart}>はじめる</button>
+      </div>
+    )
+}
 
   if(allGone){
     return (
