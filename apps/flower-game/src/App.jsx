@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Flower from './components/Flower'
+import TitleScreen from './components/TitleScreen'
 import { createPetals ,getWord,getRandomPetalCount} from './utils/petals'
 import retryImg from './assets/ui/retry.png'
 import './App.css'
@@ -29,10 +30,9 @@ function App() {
   const allGone = petals.every((petal) => petal.status  === 'gone' )
 
 if(screen ==='title'){
-   return (
+   return ( 
       <div className="app">
-        <h1>花占いでございます</h1>
-        <button onClick={handleStart}>はじめる</button>
+        <TitleScreen  onStart={handleStart} />
       </div>
     )
 }

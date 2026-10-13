@@ -47,6 +47,6 @@
   .app {
     min-height: calc(100svh - 48px);
     border-radius: 10px;
-    margin: 24px  auto
+    margin: 24px  auto;
   }
 }
