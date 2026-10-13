@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Flower from './components/Flower'
 import { createPetals ,getWord} from './utils/petals'
+import retryImg from './assets/ui/retry.png'
 import './App.css'
 
 function App() {
@@ -22,12 +23,17 @@ function App() {
     setPetals(updatedPetals); 
   }
 
+  const handleRetry = () => {setPetals(createPetals(8))}
+
   const allGone = petals.every((petal) => petal.status  === 'gone' )
 
   if(allGone){
     return (
       <div className="app">
         <h1>結果：{lastWord}</h1>
+        <button onClick={handleRetry}>
+          <img className="retrybtn" src={retryImg} alt="リトライ"/>
+        </button>
       </div>
     )
   }
