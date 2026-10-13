@@ -1,9 +1,11 @@
 .app {
   min-height: 100svh;
+  max-width: 430px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #f8ecdc;
+  margin: 0 auto;
 }
 
 /* 花全体：正方形の入れ物 */
@@ -39,4 +41,12 @@
   top: 50%;
   width: 24%;
   transform: translate(-50%, -50%);
+}
+
+@media (min-width: 600px) {
+  .app {
+    min-height: calc(100svh - 48px);
+    border-radius: 10px;
+    margin: 24px  auto
+  }
 }

@@ -26,6 +26,6 @@ export function getWord(count){
   return lastWord
 }
 
-export function gethanabiranomaisuu (){
+export function getRandomPetalCount (){
   return Math.floor(Math.random() * (MAX_PETALS - MIN_PETALS + 1 )) + MIN_PETALS
 }
