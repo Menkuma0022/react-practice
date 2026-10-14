@@ -1,5 +1,14 @@
-/* 腕：花と同じ大きさの透明な板。中心を軸に回る */
-.petal-arm {
+/*
+  花びら1枚は4重の箱でできている
+  .petal-fall  … 画面の下へ落ちる・揺れる・透明になる（回転しない箱）
+  .petal-arm   … 花びらの向き（angle ぶん回転）
+  .petal-pull  … 外側へ「すぽんっ」と抜ける
+  .petal       … 花びらの画像。落ちながらくるっと回る
+  箱はどれも花と同じ大きさの透明な板で、クリックは素通りさせる
+*/
+.petal-fall,
+.petal-arm,
+.petal-pull {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -17,11 +26,42 @@
   cursor: pointer;
 }
 
-/* 仮：*/
-.petal-arm--falling {
-  animation: petal-fade 0.6s forwards;
+/* ---------- 散るアニメ（全体 2.15 秒） ---------- */
+
+/* 落ちている花びらは、花の中心より手前に出して、もう押せないようにする */
+.petal-fall--falling {
+  z-index: 2;
+  animation: petal-drop 2s ease-in-out 0.15s forwards;
 }
 
-@keyframes petal-fade {
-  to { opacity: 0; }
+.petal-fall--falling .petal {
+  pointer-events: none;
+  animation: petal-spin 2s ease-in-out 0.15s forwards;
+}
+
+/* ① 花がすぽっと抜ける演出 最初速く、最後に減速 */
+.petal-fall--falling .petal-pull {
+  animation: petal-pull 0.15s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+@keyframes petal-pull {
+  to { transform: translateY(-45px); }
+}
+
+/*
+  ② 画面の下へ、左右にゆらゆらしながら落ちて、最後に透明にß
+*/
+@keyframes petal-drop {
+  0%   { transform: translate(0, 0); opacity: 1; }
+  20%  { transform: translate(calc(var(--sway) * 28px), 6vh); }
+  45%  { transform: translate(calc(var(--sway) * -22px), 18vh); }
+  70%  { transform: translate(calc(var(--sway) * 16px), 32vh); opacity: 1; }
+  100% { transform: translate(calc(var(--sway) * -6px), 48vh); opacity: 0; }
+}
+
+/* 
+　  ③落ちながら少しずつ回る（元の位置ずらしは残したまま回転を足す）
+ */
+@keyframes petal-spin {
+  to { transform: translateX(-50%) translateY(-30%) rotate(calc(var(--sway) * 90deg)); }
 }

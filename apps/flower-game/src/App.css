@@ -8,6 +8,7 @@
   background: var(--cream);
   margin: 0 auto;
   font-family: 'Zen Old Mincho', serif;
+  overflow: hidden; /* 落ちていく花びらがカードの外にはみ出さないように */
 }
 
 /* PC のときだけ：角丸のカードを浮かせる */

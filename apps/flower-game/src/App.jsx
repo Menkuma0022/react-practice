@@ -12,6 +12,9 @@ function App() {
   const lastWord = getWord(removedCount)
 
   function handlePetalClick(id) {
+    const target = petals.find((petal) => petal.id === id)
+    if (target.status !== 'attached') return
+
     setPetals((prev) => prev.map((petal) => {   
       if (petal.id === id) {
         return {
@@ -21,9 +24,6 @@ function App() {
       }
       return petal;
     }))
-
-    const target = petals.find((petal) => petal.id === id)
-    if (target.status !== 'attached') return
   }
 
   function handleFallEnd(id) {

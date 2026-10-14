@@ -10,6 +10,7 @@ function Flower({ petals,onPetalClick,onFallEnd }) {
             key={petal.id} 
             angle={petal.angle} 
             status={petal.status}
+            sway={petal.id % 2 === 0 ? 1 : -1}
             onClick={() => onPetalClick(petal.id)}
             onFallEnd ={() => onFallEnd(petal.id)}
         />
