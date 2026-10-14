@@ -1,22 +1,102 @@
+.title-screen{
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 72px 0 88px;
+}
+
+.title-header{
+  text-align: center;
+}
+
 .title-sub,
 .title-main {
   color: var(--green);
 }
 
 .title-sub {
-  margin-top: 24px;
-  font-size: .8em;
+  margin: 0;
+  font-size: 1em;
   letter-spacing: 0.2em;
 }
 
 .title-line {
-  width: 24px;
+  width: 32px;
   height: 1px;
   background: var(--green);
-  margin: 8px 0;
+  margin: 16px auto;
 }
 
 .title-main {
   margin: 0;
   letter-spacing: .1em;
+  margin-right: -0.1em;
+}
+
+.start-btn{
+  margin-top: 40px;
+  background: var(--green);
+  color: var(--cream);
+  border: none;
+  width: 55%;
+  padding: 0.9em 0;
+  border-radius: 999px;
+  letter-spacing:0.2em;
+  cursor: pointer;
+}
+
+.start-btn-arrow {
+  margin-left: 1em;
+}
+/* 遊び方：リボン → 説明 → 草。margin-top: auto で、ボタンと一緒に下へ寄せる */
+.title-howto {
+  margin-top: auto;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--green);
+  text-align: center;
+}
+
+/* カーブの端が下の草とそろうように、草より少し広め（外側の点々ははみ出してOK） */
+.howto-ribbon {
+  width: 80%;
+}
+
+/* 見出し：大きめ・太め */
+.howto-lead {
+  margin: 20px 0 12px;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* 説明：小さめ・薄め・ゆったり */
+.howto-text {
+  margin: 0 0 12px;
+  font-size: 0.85em;
+  line-height: 1.9;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+/* 草2つを左右の端へ */
+.howto-vines {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 画像の上下に透明な余白があるので、絵の部分だけ切り出して表示する */
+.howto-vine {
+  width: 46%;
+  aspect-ratio: 250 / 50;
+  object-fit: cover;
+}
+
+.howto-vine--flip {
+  transform: scaleX(-1);
 }
