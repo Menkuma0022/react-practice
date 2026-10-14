@@ -71,15 +71,14 @@
   margin: 20px 0 12px;
   font-size: 1.1em;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: .05em;
 }
 
-/* 説明：小さめ・薄め・ゆったり */
 .howto-text {
   margin: 0 0 12px;
   font-size: 0.85em;
   line-height: 1.9;
-  letter-spacing: 0.1em;
+  letter-spacing: .05em;
   opacity: 0.8;
 }
 

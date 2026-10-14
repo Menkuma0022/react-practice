@@ -2,7 +2,7 @@ import Petal from './Petal'
 import centerImg from '../assets/flower/center.png'
 import './Flower.css'
 
-function Flower({ petals,onPetalClick }) {
+function Flower({ petals,onPetalClick,onFallEnd }) {
   return (
     <div className="flower">
       {petals.map((petal) => (
@@ -10,7 +10,8 @@ function Flower({ petals,onPetalClick }) {
             key={petal.id} 
             angle={petal.angle} 
             status={petal.status}
-             onClick={() => onPetalClick(petal.id)}
+            onClick={() => onPetalClick(petal.id)}
+            onFallEnd ={() => onFallEnd(petal.id)}
         />
       ))}
       <img className="flower-center" src={centerImg} alt="" />

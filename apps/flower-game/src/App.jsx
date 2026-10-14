@@ -12,7 +12,22 @@ function App() {
   const lastWord = getWord(removedCount)
 
   function handlePetalClick(id) {
-    const updatedPetals = petals.map((petal) => {
+    setPetals((prev) => prev.map((petal) => {   
+      if (petal.id === id) {
+        return {
+          ...petal,
+          status: 'falling',
+        }
+      }
+      return petal;
+    }))
+
+    const target = petals.find((petal) => petal.id === id)
+    if (target.status !== 'attached') return
+  }
+
+  function handleFallEnd(id) {
+      setPetals((prev) => prev.map((petal) => {   
       if (petal.id === id) {
         return {
           ...petal,
@@ -20,8 +35,7 @@ function App() {
         }
       }
       return petal;
-    })
-    setPetals(updatedPetals); 
+    })) 
   }
 
   const handleStart = () => {setScreen('game')}
@@ -50,7 +64,7 @@ if(screen ==='title'){
 return (
       <div className="app">
         <h1>花占い</h1>
-        <Flower petals={petals} onPetalClick={handlePetalClick} />
+        <Flower petals={petals} onPetalClick={handlePetalClick} onFallEnd={handleFallEnd} />
         <p>{lastWord}</p>
       </div>
   )
