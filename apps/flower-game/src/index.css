@@ -1,5 +1,16 @@
+/* 色の名前（CSS 変数）。色を変えたいときはここだけ直す */
+:root {
+  --green: #6b7f66;
+  --cream: #f8ecdc;
+}
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background:#6b7f66;
+  background: var(--green);
+}
+
+/* ボタンは親のフォントを受け継がないので、受け継ぐように教える */
+button {
+  font-family: inherit;
 }

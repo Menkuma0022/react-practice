@@ -1,5 +1,6 @@
 import Petal from './Petal'
 import centerImg from '../assets/flower/center.png'
+import './Flower.css'
 
 function Flower({ petals,onPetalClick }) {
   return (

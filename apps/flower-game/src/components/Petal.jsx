@@ -1,4 +1,5 @@
 import petalImg from '../assets/flower/petal.png'
+import './Petal.css'
 
 function Petal({ angle, status, onClick }) {
   if (status === 'gone') return null

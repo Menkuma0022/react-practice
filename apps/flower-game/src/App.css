@@ -1,52 +1,20 @@
+/* アプリの枠：スマホでは画面いっぱい、PC では真ん中のカード */
 .app {
   min-height: 100svh;
   max-width: 430px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f8ecdc;
+  background: var(--cream);
   margin: 0 auto;
+  font-family: 'Zen Old Mincho', serif;
 }
 
-/* 花全体：正方形の入れ物 */
-.flower {
-  position: relative;
-  width: min(80vw, 400px);
-  aspect-ratio: 1;
-}
-
-/* 腕：花と同じ大きさの透明な板。中心を軸に回る */
-.petal-arm {
-  position: absolute;
-  inset: 0;
-  pointer-events: none; 
-}
-
-/* 花びら：板の中心から真上に伸びる */
-.petal {
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  height: 36%;
-  width: auto;
-  transform: translateX(-50%) translateY(-30%);
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-/* 花の中心 */
-.flower-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 24%;
-  transform: translate(-50%, -50%);
-}
-
+/* PC のときだけ：角丸のカードを浮かせる */
 @media (min-width: 600px) {
   .app {
     min-height: calc(100svh - 48px);
     border-radius: 10px;
-    margin: 24px  auto;
+    margin: 24px auto;
   }
 }

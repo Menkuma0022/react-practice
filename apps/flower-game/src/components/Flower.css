@@ -1,0 +1,15 @@
+/* 花全体：正方形の入れ物 */
+.flower {
+  position: relative;
+  width: min(80vw, 400px);
+  aspect-ratio: 1;
+}
+
+/* 花の中心 */
+.flower-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24%;
+  transform: translate(-50%, -50%);
+}

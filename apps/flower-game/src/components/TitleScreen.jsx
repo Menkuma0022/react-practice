@@ -1,7 +1,11 @@
+import './TitleScreen.css'
+
 function TitleScreen({onStart}) {
   return (
     <>
-        <h1>花占いでございます</h1>
+        <p className="title-sub">小さな フラワーゲーム</p>
+        <div className="title-line" />
+        <h1 className="title-main">花うらない</h1>
         <button onClick={onStart}>はじめる</button>
     </>
   )

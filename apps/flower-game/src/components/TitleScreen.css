@@ -1,0 +1,22 @@
+.title-sub,
+.title-main {
+  color: var(--green);
+}
+
+.title-sub {
+  margin-top: 24px;
+  font-size: .8em;
+  letter-spacing: 0.2em;
+}
+
+.title-line {
+  width: 24px;
+  height: 1px;
+  background: var(--green);
+  margin: 8px 0;
+}
+
+.title-main {
+  margin: 0;
+  letter-spacing: .1em;
+}

@@ -1,0 +1,18 @@
+/* 腕：花と同じ大きさの透明な板。中心を軸に回る */
+.petal-arm {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* 花びら：板の中心から真上に伸びる */
+.petal {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  height: 36%;
+  width: auto;
+  transform: translateX(-50%) translateY(-30%);
+  pointer-events: auto;
+  cursor: pointer;
+}
