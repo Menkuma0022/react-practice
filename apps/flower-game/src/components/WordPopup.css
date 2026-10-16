@@ -1,0 +1,30 @@
+/* 花の上側・中央に、花の上に重ねて置く。タップの邪魔をしないようクリックは素通り */
+.word-popup {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  margin: 0;
+  text-align: center;
+  font-size: 1.8em;
+  letter-spacing: 0.2em;
+  pointer-events: none;
+  animation: word-float 1.6s ease-out forwards;
+}
+
+.word-popup--like {
+  color: var(--pink);
+}
+
+.word-popup--dislike {
+  color: var(--gray);
+}
+
+/* 少し下からふわっと現れる → ゆっくり上へ → 透明になって消える */
+@keyframes word-float {
+  0%   { transform: translateY(16px);  opacity: 0; }
+  20%  { transform: translateY(0);     opacity: 1; }
+  55%  { opacity: 1; }
+  100% { transform: translateY(-36px); opacity: 0; }
+}

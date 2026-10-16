@@ -18,9 +18,9 @@ export function getWord(count){
   if (count === 0){
     //何もしない
   }else if (count%2 === 0){
-    lastWord = '嫌い'
+    lastWord = 'きらい…'
   }else{
-    lastWord = '好き'
+    lastWord = 'すき'
   }
 
   return lastWord

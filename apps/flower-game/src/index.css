@@ -2,6 +2,8 @@
 :root {
   --green: #6b7f66;
   --cream: #f8ecdc;
+  --pink: #c9908f;   /* すき：くすみピンク */
+  --gray: #9a9c94;   /* きらい：落ち着いたグレー */
 }
 
 body {

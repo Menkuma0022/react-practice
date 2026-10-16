@@ -11,6 +11,12 @@
   overflow: hidden; /* 落ちていく花びらがカードの外にはみ出さないように */
 }
 
+/* ゲーム画面の舞台：花と言葉を重ねて置くための入れ物。上に言葉が浮かぶスペースをとる */
+.game-stage {
+  position: relative;
+  padding-top: 64px;
+}
+
 /* PC のときだけ：角丸のカードを浮かせる */
 @media (min-width: 600px) {
   .app {

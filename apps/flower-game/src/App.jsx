@@ -1,9 +1,11 @@
+import './App.css'
 import { useState } from 'react'
+import { createPetals ,getWord,getRandomPetalCount} from './utils/petals'
 import Flower from './components/Flower'
 import TitleScreen from './components/TitleScreen'
-import { createPetals ,getWord,getRandomPetalCount} from './utils/petals'
+import WordPopup from './components/WordPopup'
 import retryImg from './assets/ui/retry.png'
-import './App.css'
+
 
 function App() {
   const [screen, setScreen] = useState('title')
@@ -63,9 +65,10 @@ if(screen ==='title'){
   }
 return (
       <div className="app">
-        <h1>花占い</h1>
-        <Flower petals={petals} onPetalClick={handlePetalClick} onFallEnd={handleFallEnd} />
-        <p>{lastWord}</p>
+        <div className='game-stage'>
+          <Flower petals={petals} onPetalClick={handlePetalClick} onFallEnd={handleFallEnd} />
+          <WordPopup word={lastWord} key={removedCount}></WordPopup>
+        </div>
       </div>
   )
 }
