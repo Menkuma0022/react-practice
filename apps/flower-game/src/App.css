@@ -14,14 +14,17 @@
 /* ゲーム画面の舞台：花と言葉を重ねて置くための入れ物。上に言葉が浮かぶスペースをとる */
 .game-stage {
   position: relative;
-  padding-top: 64px;
+  padding-top: 120px;
 }
 
 /* PC のときだけ：角丸のカードを浮かせる */
 @media (min-width: 600px) {
   .app {
-    min-height: calc(100svh - 48px);
+    /* 高さは「画面 - 上下の余白」。ただしスマホくらいの縦長（880px）で止める */
+    min-height: 0;
+    height: min(calc(100svh - 48px), 880px);
     border-radius: 10px;
-    margin: 24px auto;
+    /* 画面が高いときは、カードを上下の真ん中に置く */
+    margin: max(24px, calc((100svh - 880px) / 2)) auto;
   }
 }

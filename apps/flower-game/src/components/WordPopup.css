@@ -1,7 +1,7 @@
 /* 花の上側・中央に、花の上に重ねて置く。タップの邪魔をしないようクリックは素通り */
 .word-popup {
   position: absolute;
-  top: 16px;
+  top: 64px;
   left: 0;
   right: 0;
   z-index: 3;
