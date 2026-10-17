@@ -48,8 +48,7 @@ function App() {
     setScreen('game')
     setPetals(createPetals(getRandomPetalCount()))
   }
-  const handleRetry = () => {setPetals(createPetals(getRandomPetalCount()))}
-
+  
   const allGone = petals.every((petal) => petal.status  === 'gone' )
 
 if(screen ==='title'){
@@ -63,7 +62,7 @@ if(screen ==='title'){
   if(allGone){
     return (
       <div className="app">
-        <ResultScreen result={lastWord} onRetry={handleRetry} onBackToTitle={handleBackToTitle}></ResultScreen>
+        <ResultScreen result={lastWord} onRetry={handleStart} onBackToTitle={handleBackToTitle}></ResultScreen>
       </div>
     )
   }
