@@ -4,7 +4,7 @@ import { createPetals ,getWord,getRandomPetalCount} from './utils/petals'
 import Flower from './components/Flower'
 import TitleScreen from './components/TitleScreen'
 import WordPopup from './components/WordPopup'
-import retryImg from './assets/ui/retry.png'
+import ResultScreen from './components/ResultScreen'
 
 
 function App() {
@@ -40,7 +40,14 @@ function App() {
     })) 
   }
 
-  const handleStart = () => {setScreen('game')}
+  function handleBackToTitle() {
+      setScreen('title')
+  }
+
+  const handleStart = () => {
+    setScreen('game')
+    setPetals(createPetals(getRandomPetalCount()))
+  }
   const handleRetry = () => {setPetals(createPetals(getRandomPetalCount()))}
 
   const allGone = petals.every((petal) => petal.status  === 'gone' )
@@ -56,10 +63,7 @@ if(screen ==='title'){
   if(allGone){
     return (
       <div className="app">
-        <h1>結果：{lastWord}</h1>
-        <button onClick={handleRetry}>
-          <img className="retrybtn" src={retryImg} alt="リトライ"/>
-        </button>
+        <ResultScreen result={lastWord} onRetry={handleRetry} onBackToTitle={handleBackToTitle}></ResultScreen>
       </div>
     )
   }

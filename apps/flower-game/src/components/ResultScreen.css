@@ -1,0 +1,105 @@
+/* 結果画面：結果は真ん中、ボタンは下（タイトル画面と同じ並び） */
+.result-screen {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0 120px;
+  color: var(--green);
+  text-align: center;
+}
+
+/* 結果のかたまり：上下の余りの真ん中に置く */
+.result-body {
+  width: 85%;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-ribbon {
+  width: 80%;
+}
+
+.result-lead {
+  margin: 24px 0 8px;
+  font-size: 0.95em;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+/* 結果の言葉：大きく。色はふわっと浮かぶ文字と同じ */
+.result-word {
+  margin: 0;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;
+}
+
+.result-word--like {
+  color: var(--pink);
+}
+
+.result-word--dislike {
+  color: var(--gray);
+}
+
+.result-message {
+  margin: 12px 0 20px;
+  font-size: 0.9em;
+  letter-spacing: 0.15em;
+}
+
+.result-vines {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 草の画像は上下に透明な余白があるので、絵の部分だけ切り出す */
+.result-vine {
+  width: 46%;
+  aspect-ratio: 250 / 50;
+  object-fit: cover;
+}
+
+.result-vine--flip {
+  transform: scaleX(-1);
+}
+
+/* ボタンたち */
+.result-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* もういちど：タイトルの「はじめる」と同じデザイン */
+.retry-btn {
+  width: 55%;
+  padding: 0.9em 0;
+  background: var(--green);
+  color: var(--cream);
+  border: none;
+  border-radius: 999px;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+/* タイトルへ：控えめな文字だけのボタン */
+.back-link {
+  padding: 4px 8px;
+  background: none;
+  border: none;
+  color: var(--green);
+  font-size: 0.85em;
+  letter-spacing: 0.15em;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
