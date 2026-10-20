@@ -1,0 +1,23 @@
+/* はみ出したら、この箱の中だけ横スクロール */
+.table-wrap {
+  overflow-x: auto;
+}
+
+/* テーブル本体 */
+.weapon-table {
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+/* セルの余白と区切り線 */
+.weapon-table th,
+.weapon-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+/* 見出しの行 */
+.weapon-table thead th {
+  background: #EDE7FF;
+}
