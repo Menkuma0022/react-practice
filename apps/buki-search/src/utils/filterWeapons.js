@@ -1,3 +1,4 @@
 export function filterWeapons (weapons, type) {
-    return  weapons.filter((weapon) => type === 'all' || weapon.type === type)
+    if (type === 'all') return weapons
+    return  weapons.filter((weapon) => weapon.type === type)
 }
