@@ -1,7 +1,7 @@
 export type Weapon = {
   id: number
   name: string
-  type: string
+  type: WeaponType
   sub: string
   special: string
 } 
@@ -97,4 +97,6 @@ export const WEAPON_TYPES = [
   'シェルター',
   'ストリンガー',
   'ワイパー'
-]
+] as const
+
+export type WeaponType = (typeof WEAPON_TYPES)[number]

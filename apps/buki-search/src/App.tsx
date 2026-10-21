@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { WEAPONS } from './data/weapons'
 import {filterWeapons} from './utils/filterWeapons'
 import { sortWeapons } from './utils/sortWeapons'
