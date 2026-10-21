@@ -20,10 +20,15 @@ function App() {
   return (
     <>
       <h1>ブキ検索</h1>
+      <p className="subtitle">（非公式ファンサイト）</p>
       <SearchInput value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
       <TypeSelect value={selectedType} onChange={(e) => setSelectedType(e.target.value)} />
       <SortSelect value={sortType} onChange={(e) => setSortType(e.target.value as 'default' | 'name')}/>
       <WeaponList weapons={sortedWeapons}/>
+      <footer>
+        <p>このサイトは個人が学習のために作った非公式のファンサイトで、任天堂株式会社とは関係ありません。「スプラトゥーン」は任天堂の商標です。ブキのデータは学習用のサンプルで、実際のゲームと異なる場合があります。
+        </p>
+      </footer>
     </>
   )
 }

@@ -1,10 +1,12 @@
-/* はみ出したら、この箱の中だけ横スクロール */
+/* はみ出したら、この箱の中だけスクロール（横も縦も） */
 .table-wrap {
-  overflow-x: auto;
+  overflow: auto;
+  max-height: 70svh; /* 画面の高さの 70% まで。それ以上は箱の中でスクロール */
 }
 
 /* テーブル本体 */
 .weapon-table {
+  width: 100%;
   border-collapse: collapse;
   white-space: nowrap;
 }
@@ -19,5 +21,8 @@
 
 /* 見出しの行 */
 .weapon-table thead th {
-  background: #EDE7FF;
+  background: var(--color-main); /* 背景がないと下の行が透けて見える */
+  /* 箱の中でスクロールしても一番上で止まる */
+  position: sticky;
+  top: 0;
 }
