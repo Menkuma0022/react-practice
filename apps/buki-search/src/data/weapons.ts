@@ -1,5 +1,12 @@
+export type Weapon = {
+  id: number
+  name: string
+  type: string
+  sub: string
+  special: string
+} 
 
-export const WEAPONS = [
+export const WEAPONS:Weapon[] = [
   // シューター
   { id: 1, name: "わかばシューター", type: "シューター", sub: "スプラッシュボム", special: "グレートバリア" },
   { id: 2, name: "スプラシューター", type: "シューター", sub: "キューバンボム", special: "ウルトラショット" },

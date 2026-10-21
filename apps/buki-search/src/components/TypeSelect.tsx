@@ -1,6 +1,10 @@
 import { WEAPON_TYPES } from "../data/weapons"
+type Props = {
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+}
 
-function TypeSelect ({value,onChange}){
+function TypeSelect ({value,onChange}: Props){
     return(
         <select value={value} onChange={onChange}>
             <option value="all">すべて</option>

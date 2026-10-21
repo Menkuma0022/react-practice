@@ -1,6 +1,11 @@
 import './WeaponList.css'
+import type { Weapon } from '../data/weapons'
 
-function WeaponList ({weapons}){
+type Props = {
+  weapons: Weapon[]
+}
+
+function WeaponList ({weapons}: Props){
     return(
       <div className="table-wrap">
         <table className='weapon-table'>
